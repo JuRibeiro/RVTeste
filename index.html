@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--icone aba-->
+    <link rel="icon" type="image/x-icon" href="./assets/icons/logo-white.svg">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- pasta css -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>green thumb.</title>
+</head>
+
+<body>
+    <header class="header">
+        <!-- logo -->
+        <div class="container">
+          <img src="./assets/icons/logo-white.svg" alt="green thumb" class="logo" />
+        </div>
+        <!-- /logo -->
+    
+        <!-- titulo -->
+        <div class="container header-title">
+          <h1>Find your next green friend</h1>
+        </div>
+        <!-- /titulo -->
+    
+        <!-- seta -->
+        <div class="container seta">
+          <a href="#options">
+            <img src="./assets/icons/arrow-down.svg" alt="imagem" />
+          </a>
+        </div>
+        <!-- /seta -->
+    
+        <!-- background -->
+        <div class="bg-header">
+          <img src="./assets/hero/desktop/left-leaves.png" alt="imagem" class="responsive" />
+          <img src="./assets/hero/desktop/plantperson.png" alt="imagem" class="responsive" />
+          <img src="./assets/hero/desktop/right-leaves.png" alt="imagem" class="responsive" />
+        </div>
+        <!-- /background -->
+      </header>
+
+<!-- Opções -->
+  <section class="main container" id="options">
+    <!-- sol -->
+    <div class="option">
+      <img src="./assets/illustrations/sun.png" alt="imagem" />
+      <p>
+        <strong>1.</strong> Set the amount of <strong>sunlight</strong> your
+        plant will get.
+      </p>
+      <select name="sun" id="sun">
+        <option value="">Select...</option>
+        <option value="no">No</option>
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <!-- /sol -->
+
+    <!-- água -->
+    <div class="option">
+      <img src="./assets/illustrations/wateringcan.png" alt="imagem" class="inverter" />
+      <p>
+        <strong>2.</strong> How often do you want to
+        <strong>water</strong> your plant?
+      </p>
+      <select name="water" id="water">
+        <option value="">Select...</option>
+        <option value="regularly">Regularly</option>
+        <option value="daily">Daily</option>
+        <option value="rarely">Rarely</option>
+      </select>
+    </div>
+    <!-- /água -->
+
+    <!-- pets -->
+    <div class="option">
+      <img src="./assets/illustrations/dog.png" alt="imagem" />
+      <p>
+        <strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants?
+      </p>
+      <select name="pets" id="pets">
+        <option value="">Select...</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+    <!-- /pets -->
+  </section>
+  <!-- / Fim Opções -->
+
+  <!-- No results -->
+  <section class="no-results container">
+    <div>
+      <h2>No results yet…</h2>
+      <p>Use the filters above to find the plant that best fits your environment :)</p>
+    </div>
+    <div>
+      <img src="./assets/illustrations/no-results.png" alt="image" />
+    </div>
+  </section>
+  <!-- /No results -->
+
+  <!-- section results -->
+  <section class="results container">
+    <div>
+      <img src="./assets/illustrations/pick.png" alt="image" class="img-section" />
+      <h2>Our picks for you</h2>
+    </div>
+  
+    <!-- grid de plantas -->
+    <div class="grid">
+      
+      <div class="box-principal">
+        <div class="favorite">Staff favorite</div>
+        <img src="./assets/plant photos/bunny-ears-cacti.png" alt="image" class="img-destaque" />
+        <div class="info-principal">
+          <h3 class="h3-principal">Bunny ears cacti</h3>
+          <div>
+            <h4>$25</h4>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones-d" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones-d" />
+            <img src="./assets/icons/1-drop.svg" alt="image" class="icones-d" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./assets/plant photos/euphorbia-eritrea.png" alt="image" class="img-box"/>
+        <h3>Euphorbia eritrea</h3>
+        <div class="info">
+          <h4>$25</h4>
+          <div>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/1-drop.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+      
+      <div class="box">
+        <img src="./assets/plant photos/succulent-bowl.png" alt="image" class="img-box"/>
+        <h3>Succulent bowl</h3>
+        <div class="info">
+          <h4>$25</h4>
+          <div>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/1-drop.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+      
+      <div class="box">
+        <img src="./assets/plant photos/ponytail-palm.png" alt="image" class="img-box"/>
+        <h3>Ponytail palm</h3>
+        <div class="info">
+          <h4>$50</h4>
+          <div>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/1-drop.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./assets/plant photos/ficus-lyrata.png" alt="image" class="img-box"/>
+        <h3>Ficus lyrata</h3>
+        <div class="info">
+          <h4>$50</h4>
+          <div>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/two-drops.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./assets/plant photos/lucky-bamboo.png" alt="image" class="img-box"/>
+        <h3>Lucky bamboo</h3>
+        <div class="info">
+          <h4>$50</h4>
+          <div>
+            <img src="./assets/icons/pet.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/two-drops.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+    
+      <div class="box">
+        <img src="./assets/plant photos/calathea-triostar.png" alt="image" class="img-box"/>
+        <h3>Calathea triostar</h3>
+        <div class="info">
+          <h4>$50</h4>
+          <div>
+            <img src="./assets/icons/toxic.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/3-drops.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./assets/plant photos/pilea-peperomioides.png" alt="image" class="img-box"/>
+        <h3>Pilea peperomioides</h3>
+        <div class="info">
+          <h4>$35</h4>
+          <div>
+            <img src="./assets/icons/toxic.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/3-drops.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="./assets/plant photos/monstera-deliciosa.png" alt="image" class="img-box"/>
+        <h3>Monstera deliciosa</h3>
+        <div class="info">
+          <h4>$60</h4>
+          <div>
+            <img src="./assets/icons/toxic.svg" alt="image" class="icones" />
+            <img src="./assets/icons/low-sun.svg" alt="image" class="icones" />
+            <img src="./assets/icons/3-drops.svg" alt="image" class="icones" />
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+<!-- /section results -->
+</body>
+
+<!-- consumindo a API -->
+<script src="./arquivo.js"></script>
+
+</html>
